@@ -1,0 +1,344 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{fontspec}
+\usepackage{siunitx}
+\setmainfont[Scale=1.4]{TH SarabunPSK}
+\author{S. Suebsang}
+\title{\textbf{Geometry solution for POSN Camp II WU}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\newtheorem{problem}{Problem}[section]
+\begin{document}
+	
+	\maketitle
+	\section{Exercise Trigonometry}
+		% ข้อ 1
+		\begin{problem}
+			หา $\bigtriangleup{ABC}$ ซึ่ง $\sin{(A-B)}+\sin{(B-C)}+\sin{(C-A)}=0$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}] ---------------------------------------------------------------
+			\begin{itemize}
+				\item WLOG สมมติ $\angle{A}, \angle{B}$ เป็นมุมเเหลมโดย $\angle{A} \ge \angle{B}$ เพื่อลดกรณีในการเเก้สมการ
+				\item เปลี่ยน $\hat{C} = \pi - \hat{A} - \hat{B}$
+				\item จับคู่เหมาะเเล้วใช้ สูตร $\sin{X}-\sin{Y} = 2\cos{(\frac{X+Y}{2})}\sin{(\frac{X-Y}{2})}$
+				\item ใช้สูตร $\sin{(2X)} = 2\sin{X}\cos{X}$
+			\end{itemize}
+			
+
+			
+		\end{proof}
+		% ข้อ 2
+		\begin{problem}
+			ให้ $a,b,c$ เป็นความยาวด้านของสามเหลี่ยม โดยที่ $(a+b+c)(a+b-c)=3ab$ หามุมที่อยู่ตรงข้ามกับความยาวด้าน $c$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}] 
+			ถ้าสังเกตเเละจัดรูปสมการที่โจทย์หนดจะพบว่าถ้าสมการข้างต้นตรงกับ law of cosines ซึ่งจัดได้คือ \\
+			$$ a^2+b^2-2ab(\frac{1}{2}) = c^2$$
+		\end{proof}
+	\newpage
+		% ข้อ 3
+		\begin{problem}
+			ใน $\bigtriangleup{ABC}$ กำหนดให้ $\angle{B} = \angle{C} = \ang{80}$ $P$ อยู่บนส่วนของเส้นตรง $A$B ซึ่ง $\angle{BPC}=\ang{30}$ จงพิสูจน์ว่า $AP = BC$
+		\end{problem}
+	    \begin{proof}[\underline{proof sketch}]
+	    	 ---------------------------------------------------------------
+	    	\begin{itemize}
+	    		\item law of sine $\bigtriangleup{ABC}$ จัด $|BC|$ ในรูป $|AC|$
+	    		\item law of sine  $\bigtriangleup{ABC}$ จัด $|PC|$ ในรูป $|AC|$ โดยใช้ผลจากด้านบน
+	    		\item $|AP| = |AC| - |PC|$ 
+	    		\item เพียงพอที่จะเเสดง $\frac{\sin{\ang{20}}}{\sin{\ang{80}}} = 1 -2\frac{\sin{\ang{10}}\sin{70}}{\sin{\ang{30}}}$  
+	    		\item ใช้สูตร $\sin{(2X)} = 2\sin{X}\cos{X}$ 
+	    		\item ใช้สูตร $-2\sin{X}\sin{Y} = \cos{(X+Y)} - \cos{(X-Y)}$
+	    	\end{itemize}
+  
+	    	
+	    \end{proof} 
+		% ข้อ 4
+		\begin{problem}
+			ในสามเหลี่ยม $\bigtriangleup{ABC}$ จุด $P$ เเละ $Q$ อยู่บนส่วนของเส้นตรง $BC$ ซึ่ง $AP$ เเละ $AQ$ เเบ่งมุม $\angle{A}$ ออกเป็นสามส่วน เเละ $BQ = QC$ ถ้า $AC = \sqrt{2}AQ$ จงหา $\angle{A}$
+		\end{problem}
+	   \begin{proof}[\underline{proof sketch}]
+	   	---------------------------------------------------------------
+	   	\begin{itemize}
+	   		\item ให้ $|AB| = z, |AQ| = x, |BQ| = |QC| = y$ เเละ $\angle{BAY} = \angle{YAQ} = \angle{QAC} = \alpha $
+	   		\item law of sine $\bigtriangleup{AQC}$ เเละ $\bigtriangleup{ABG}$ จะได้ $x = z\sqrt{2}\cos{\alpha}$
+	   		\item law of cosine $\bigtriangleup{AQC}$ ได้ $3x^2 - 2\sqrt{2}x^2\cos{\alpha} = y^2$
+	   		\item law of cosine $\bigtriangleup{ABQ}$ ได้ $x^2 + (\frac{x}{\sqrt{2}\cos{\alpha}})^2 - 2x\frac{x}{\sqrt{2}\cos{\alpha}}\cos{2\alpha} = y^2$
+	   		\item จับสมการด้านบนเท่ากันเเล้วใช้ $\cos{2X} = 2(\cos{X})^2 - 1$
+	   		\item จะได้สมการ $4(\cos{\alpha})^2 - 2\sqrt{2}\cos{\alpha} - 1 = 0$ $\rightarrow$ $\alpha = \ang{7.5} $
+	   	\end{itemize}
+	   	\end{proof}
+   	\newpage
+		% ข้อ 5
+		\begin{problem}
+			ให้ $\bigtriangleup{ABC}$ เป็นสามเหลี่ยมด้านเท่า เเละ $G$ เป็นจุดศูนย์กลางของวงกลมเเนบในของมัน ถ้า $D$ เเละ $E$ เป็นจุดบน $AB$ เเละ $AC$ ตามลำดับ โดยที่ $DE$ สัมผัสกับ $G$ จงเเสดงว่า $\frac{AD}{DB}+\frac{AE}{EC} = 1$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			---------------------------------------------------------------
+			\begin{itemize}
+				\item กำหนดให้วงกลม $G$ รัศมี $r$ สัมผัส $AB, AC$ ที่ $L, M$ ตามลำดับ เเละ ความยาวด้านของสามเหลี่ยมคือ $d$
+				\item ให้ $\angle{EDA} = 2x$ จะได้ $\angle{DEA} = 120 - 2x $ 
+				\item ลาก $GD, GE$  ได้  $\angle{GDL} = 90 - x$ เเละ $\angle{GEM} = 30 + x$
+				\item เเสดง $r = \frac{d}{2\sqrt{3}}$ เเล้วหา $|DC|,|EM|$ ในรูป $d$ จาก $\bigtriangleup{GDL},\bigtriangleup{GEM}$ ตามลำดับ
+				\item $|AD| = \frac{d}{2} - |DL|$ เเละ $|AE| =  \frac{d}{2} - |AE|$
+				\item จะได้ $\frac{AD}{DB} = \frac{\sqrt{3}\tan{(90-x)}-1}{\sqrt{3}\tan{(90-x)}+1} $ เเละ $\frac{AE}{EC} = \frac{\sqrt{3}\tan{(30+x)}-1}{\sqrt{3}\tan{(30+x)}+1}$
+				\item ใช้ $\tan{(X+Y)} = \frac{\tan{X} + \tan{Y}}{1 - \tan{X}\tan{Y}}$ กระจาย
+			\end{itemize}
+		\end{proof}
+		% ข้อ 6
+		\begin{problem}
+			ให้ $\bigtriangleup{ABC}$ เป็นสามเหลี่ยมด้านเท่า เเละ $G$ เป็นจุด $centroid$ จุด $D$ เป็นจุดบนด้าน $AB$ ซึ่ง $AD = AG$ เส้นตรง $DG$ ตัดกับ เส้นตรง $AC$ เเละ $BC$ ที่จุด $E$ เเละ $F$ ตามลำดับ จงเเสดงว่า $ED=EF$ 
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			ข้อนี้สังเกตได้ว่ามีรูปคล้ายกับทฤษฎี Menelaus เราต้องการหา $\frac{DE}{EF}$ ซึ่งสามารถหาได้จาก Menelaus $\bigtriangleup{DBF}$ เเละ จุด $C, E, A$ เเต่ปัญหาคือเราไม่รู้อัตราส่วน $\frac{CF}{CB}, \frac{BA}{AD}$ ดังนั้นเป้าหมายเราคือหา\\อัตราส่วนพวกนี้
+			\begin{itemize}
+				\item กำหนดให้ $d$ คือความยาวด้านของสามเหลี่ยมนี้ เเละ $H$ เป็นจุดเกิดจากลากเส้นตั้งฉากจาก $A$ บน $BC$
+				\item ไล่ได้ไม่ยากจะได้ $|AD| = \frac{d}{\sqrt{3}}$ เเละ $|GH| = \frac{d}{6\sqrt{3}}$
+				\item หา $|HF|$ จาก $\bigtriangleup{GHF}$ จะได้ $|HF| = \frac{d}{2\sqrt{3}}(2+\sqrt{3})$ $\rightarrow |CF| = \frac{d}{\sqrt{3}}$
+				\item จะได้ $\frac{CF}{CB} =  \frac{1}{\sqrt{3}} $ เเละ $\frac{BA}{AD} = \sqrt{3}$ จาก Menelaus จะได้ $|DE| = |EF|$
+			\end{itemize}
+		\end{proof}
+	\newpage		
+		% ข้อ 7
+		\begin{problem}
+			ถ้ามี $\bigtriangleup{ABC}$ ซึ่ง $c^2 = 4ab\cos{\hat{A}}\cos{\hat{B}} $ เเล้ว สามเหลี่ยมนี้เป็นสามเหลี่ยมหน้าจั่ว
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			ข้อนี้สังเกตได้ว่าสมการที่โจทย์ให้มามีลักษณะคล้ายกับ law of cosine เเต่หลังจากทำไประยะหนึ่งจะพบว่าไม่ได้อะไรจากสมการเลยเราจึงเปลี่ยนวิธีโดยใช้ law of sine
+			\begin{itemize}
+				\item ใช้ law of sine ในรูป $\frac{a}{\sin{\hat{A}}} = \frac{b}{\sin{\hat{B}}} = \frac{c}{\sin{\hat{C}}} = 2R$
+				\item จะได้สมการใหม่เป็น $(\sin{\hat{C}})^2 = \sin{2\hat{A}}\sin{2\hat{B}}$
+				\item ใช้สูตร $(\sin{X})^2= \frac{1 - \cos{2X}}{2}$, 	เเทน $\hat{C} = \pi - \hat{A} - \hat{B}$ จัดรูป
+				\item จะได้ $1 = \cos{2(\hat{A}-\hat{B})}$
+			\end{itemize}
+			
+		\end{proof}
+		% ข้อ 8
+		\begin{problem}
+			สี่เหลี่ยมจตุรัส $ABMN, BCKL, ACPQ$ ถูกสร้างบนด้านนอก $\bigtriangleup{ABC}$ ผลต่างระหว่างพื้นที่ของ $\square{ABMN}$ เเละ $\square{BCKL}$ คือ $d$ หาผลต่างความยาวด้านกำลังสองของ $NQ$ เเละ $PK$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			จากข้อมูลของโจทย์สังเกตได้ไม่ยากว่าใช้ law of cosine เพราะเกี่ยวข้อกับความยาวด้านกำลังสอง
+			\begin{itemize}
+				\item law of cosine $\bigtriangleup{NAQ}$ เเละ $\bigtriangleup{ABC}$ จะได้ $2(|AB|^2 + |AC|^2) = |NQ|^2 + |BC|^2$
+				\item ในทำนองเดียวกันกับด้านบน จะได้ $2(|BC|^2 + |AC|^2) = |PK|^2 + |AB|^2$
+				\item ดังนั้น ผลต่างระหว่าง $|NQ|^2$ กับ $|PK|^2$ เท่ากับ $3d$
+			\end{itemize}
+			
+		\end{proof}
+		
+		% ข้อ 9
+		\begin{problem}
+			วงกลมเเนบในของ $\bigtriangleup{ABC}$ สัมผัส $BC$ ที่จุด $D$ เเละวงกลมเเนบนอกตรงข้าม $B$ สัมผัส $BC$ ที่จุด $E$ ถ้า $AD = AE$ จงพิสูจน์ว่า $2\hat{C}-\hat{B}=\ang{180}$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+		---------------------------------------------------------------
+		\begin{itemize}
+			\item ไล่ด้านจะ ได้ $|BD| = \frac{a+c-b}{2}, |DC| = \frac{a+b-c}{2}$ เเละ $|DE| = b$
+			\item law of cosine $\bigtriangleup{ABD}$ จะได้ $c^2 + (\frac{a+c-b}{2})^2 -2c\frac{a+c-b}{2}\cos{\hat{B}} = |AD|^2$
+			\item law of cosine $\bigtriangleup{ABE}$ จะได้ $c^2 + (\frac{a+b+c}{2})^2 -2c\frac{a+b+c}{2}\cos{\hat{B}} = |AE|^2$
+			\item จับสมการด้านบนเท่ากันเเล้วจะรูปจะได้ $\cos{\hat{B}} = \frac{a+c}{2c} = \frac{a^2+c^2-b^2}{2ac} \rightarrow ac = c^2 - b^2 $
+			\item หา $\cos{\hat{2C}}$ ให้อยู่ ในรูป $a,b,c$ เเละใช้สมการด้านบนจัดรูปจนเท่ากับ  $-\cos{\hat{B}}$ 
+			\item ใช้ $\cos2X = 2(\cos{X})^2 - 1$
+
+		\end{itemize}
+		\end{proof}
+	
+		% ข้อ 10
+		\begin{problem}
+			ให้ จุด $O$ เเละ $P$ เป็นจุดภายใน $\bigtriangleup{ABC}$ ซึ่ง $\angle{ABO} = \angle{CBP}$ 
+			เเละ $\angle{BCO} = \angle{ACP}$  จงเเสดงว่า $\angle{CAO} = \angle{BAP}$ 
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			ข้อนี้เห็นได้ชัดจาก Ceva's theorem version ตรีโกณว่าเป็นจริง
+			
+		\end{proof}
+		% ข้อ 11
+		\begin{problem}
+			กำหนด $\bigtriangleup{ABC}$ โดยที่ จุด $H$ เป็นจุด orthocenter เเละ $M$ เป็นจุดกึ่งกลางด้าน $AC$ ให้ $l$  เป็นเส้นตรงผ่านจุด $M$ เเละขนานกับเส้นเเบ่งครึ่ง $\angle{AHC}$ จงเเสดงว่า $l$ เเบ่งสามเหลี่ยมออกเป็น $2$ ส่วนที่มีเส้นรอบรูปยาวเท่ากัน
+		\end{problem} 
+		\begin{proof}[\underline{proof sketch}]
+			ข้อนี้สังเกตได้ว่ามุมที่เกิดจากเส้นเหล่านั้นสามารถเขียนได้ในรูป $\angle{A}, \angle{B}, \angle{C}$ เเสดงว่าเราสามารถคำนวณทุกด้านให้ติดในรูป $a,b,c$ ได้
+		\begin{itemize}
+			\item กำหนดให้ $l$ ตัด  $BC$ ที่จุด $D$
+			\item law of cosine $\bigtriangleup{DMC}$ จะได้ $|DC| = \frac{b\cos{(C-\frac{B}{2})}}{2\cos{\frac{B}{2}}}$ เปลี่ยน $\cos$ ให้อยู่ในรูป $a,b,c$
+			\item เปลี่ยน $\cos$ ด้านบนให้อยู่ในรูป $a,b,c$
+			\item ใช้ $\cos{(X - Y)} = \cos{X}\cos{Y} + \sin{X}\sin{Y}, \cos{C} = \frac{a^2 + b^2 - c^2}{2ab}$ 
+			\item $\tan{\frac{B}{2}} = \frac{2r}{a-b+c}, \frac{1}{2}ab\sin{C} = [ABC]$ เเละ $r = \frac{2[ABC]}{a + b + c}$ โดย $r$ คือรัศมีของวงกลมเเนบใน $\bigtriangleup{ABC}$
+			\item เเสดง $c + (a-|DC|) = |DC|$
+		\end{itemize}
+	    \end{proof}
+    
+    
+	\newpage
+	\section{Exercise Ceva Theorem and menelaus Theorem}
+		% ข้อ 1
+		\begin{problem}
+			ให้ $D$ เป็นจุดบนด้าน $AC$ ของสามเหลี่ยมมุมฉาก $ABC$ ($\angle{B} = \ang{90}$)โดยที่ $AB = CD$  จงเเสดงว่าเส้นเเบ่งครึ่ง $\angle{A}$, เส้นเเบ่งครึ่งด้านผ่าน $B$ เเละ เส้นส่วนสูงของ $\bigtriangleup{ABD}$ ผ่าน $D$ ตัดกันที่จุดเดียวกัน
+		\end{problem}
+	\begin{proof}[\underline{proof sketch}]
+		โจทย์อาจผิดเพราะใช้ Geogebra เเล้วไม่สอดคล้องกับโจทย์
+	\end{proof}
+
+		% ข้อ 2
+		\begin{problem}
+			ให้ $A_1,B_1,C_1$ บนจุดบนด้าน $BC, CA$ เเละ $AB$ ของ 
+			$\bigtriangleup{ABC}$ ส่วนของเส้นตรง $AA_1, BB_1, CC_1$ ตัดกันที่จุดหนึ่ง เส้นตรง $A_1B_1$ เเละ $A_1C_1$ พบเส้นตรงที่ผ่านจุด $A$ ขนาน $BC$ ที่จุด $C_2$ เเละ $B_2$ ตามลำดับ จงเเสดงว่า $AB_2 = AC_2$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			จากรูปจะสังเกตได้ว่ามีสามเหลี่ยมที่ลักษณะคล้ายกับททฤษฎีบท Ceva เเละมีสามเหลี่ยมคล้าย 2 คู่
+			\begin{itemize}
+				\item  Ceva's theorem กับ $\bigtriangleup{ABC} ,C_1, A_1, B_1$
+				\item $\bigtriangleup{A_1C_1B_2} \backsim \bigtriangleup{BC_1A_1}$ เเละ $\bigtriangleup{AB_1C_2} \backsim \bigtriangleup{CB_1A_1}$
+			\end{itemize}
+		\end{proof}
+		% ข้อ 3
+		\begin{problem}
+			ให้ $A'$ เป็นจุดบนส่วนของเส้นตรง $BC$ ของ $\bigtriangleup{ABC}$ เส้นเเบ่งครึ่งมุมภายใน $\angle{BA'A}$ เเละ $\angle{CA'A}$ ตัด $AB$ เเละ $CA$ ที่จุด $D$ เเละ $E$ ตามลำดับ จงเเสดงว่า $AA', BE$ เเละ $CD$ ตัดกันที่จุดเดียวกัน
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}] จากรูปสังเกตได้ว่าน่าจะต้องใช้ทฤษฎีบทCeva เเละ สูตรเเบ่งครึ่งมุม
+			\begin{itemize}
+				\item Ceva's theorem $\bigtriangleup{ABC}, D, A', E$
+				\item สูตรเเบ่งครึ่งมุม $\bigtriangleup{AA'B}$ เเละ $\bigtriangleup{AA'C}$
+			\end{itemize}
+			
+		\end{proof}
+		\newpage
+		% ข้อ 4
+		\begin{problem}
+			จากจุด $C$ ของ สามเหลี่ยมมุมฉาก $ABC (\hat{C}=\ang{90})$ ลากส่วนสูง $CK$ ใน $\bigtriangleup{ACK}$ วาดเส้นเเบ่งครึ่งมุม $CE$ เส้นตรงผ่านจุด $B$ ขนาน $CE$ ตัด $CK$ ที่จุด $F$ จงเเสดงว่าเส้นตรง $EF$ เเบ่งครึ่งด้าน $AC$ 
+		\end{problem}
+	\begin{proof}[\underline{proof sketch}]
+		ข้อนี้สังเกตได้ไม่ยากว่าน่าจะต้องใช้ Menelaus, สูตรเเบ่งครึ่งมุม เเละ ความคล้าย ในการเเก้
+		\begin{itemize}
+			\item กำหนดให้เส้นตรง $EF$ ตัด $AC$ ที่จุด $L$
+			\item Menelaus's theorem กับ  $\bigtriangleup{ACK}$ เเละจุด $L,E,F $
+			\item สูตรเเบ่งครึ่งมุม $\bigtriangleup{AKC}$
+			\item พยายามเเปลงด้านให้อยู่ในรูปด้าน $|AB|$ เเละ $\angle{A}$ โดยใช้ตรีโกณ
+			\item law of sine กับ $\bigtriangleup{CFB}$
+		\end{itemize}
+	\end{proof}
+		
+
+		% ข้อ 5
+		\begin{problem}
+			จงเเสดงว่าเส้นตรงผ่าน $A$ เเละจุดศูนย์กลางของวงกลมเเนบใน $\bigtriangleup{ABC}$, เส้นตรงผ่าน $B$ เเละจุดศูนย์กลางของวงกลมล้อมรอบ $\bigtriangleup{ABC}$ เเละ เส้นตรงผ่าน $C$ เเละจุด orthocenter ของ $\bigtriangleup{ABC}$ ตัดกันที่จุดเดียวกันถ้า $(\cos{A})^2 = \cos{B}\cos{C}$
+		\end{problem}
+
+		\begin{proof}[\underline{proof sketch}]
+			ข้อนี้เห็นได้ชัดว่าใช้ทฤษฎีบท Ceva version ตรีโกณโดยให้มุมติดในรูป $\angle{A}, \angle{B}, \angle{C}$
+		\end{proof}
+		% ข้อ 6
+		\begin{problem}
+			ในวงกลม $C$ มี $O$ เป็นจุดศูนย์กลางรัศมี $r$ ให้ $C_1, C_2$ เป็นวงกลมซึ่งมีจุดศูนย์กลางคือ $O_1, O_2$ เเละ รัศมี $r_1, r_2$ ตามลำดับ โดยวงกลม $C_i$ internally tangent กับ $C$ ที่จุด $A_i$ เมื่อ $i =1,2$ เเละ $C_1$ externally tangent กับ $C_2$ ที่จุด $A$ จงเเสดงว่า $OA,O_1A_2$ เเละ $O_2A_1$ ตัดกันที่จุดเดียวกัน(หมายเหตุ สามารถหาภาพตัวอย่าง internally เเละ externally tangent ได้จาก google)
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			---------------------------------------------------------------
+			\begin{itemize}
+				\item ลากเส้นเชื่อม $O, O_1, O_2$ 
+				\item  Menelaus's theorem กับ $\bigtriangleup{OO_1O_2}, A,A_1,A_2$
+				\item ใช้ความคล้ายคิดอัตราส่วนที่ต้องใช้ในmenelausให้อยู่ในรูป $r,r_1,r_2$ 
+			\end{itemize}
+		\end{proof}
+		% ข้อ 7
+		\begin{problem}
+			ใน $\bigtriangleup{ABC}$ ให้ $D$ เป็นจุดบนรังสีจาก $B$ ไป $C$ เเละ $E$ เป็นจุดบนรังสีจาก $C$ ไป $A$ โดยที่ $BD = CE = AB$ ให้ $l$ เป็นเส้นตรงผ่าน $D$ ขนาน $AB$ ถ้า $l$ ตัด เส้นตรง $BE$ ที่ $M$ เเละ $M$ ตัด $AB$ ที่ $F$ ตามลำดับจงเเสดงว่า $(BA)^3=AE.BF.CD$ 
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			ดูได้ไม่ยากในรูปสามารถใช้ Menelaus ได้ 2 รูปเเต่เราควรใช้รูปที่มีด้านที่โจทย์ต้องกาให้มากที่สุด
+			\begin{itemize}
+				\item Menelaus's theorem กับ $\bigtriangleup{ACF}$ เเละ จุด $B, E$ เเละ $M$
+				\item $\bigtriangleup{DCM} \backsim \bigtriangleup{BCF}$
+			\end{itemize}
+
+		\end{proof}
+		% ข้อ 8
+		\begin{problem}
+			ในสี่เหลี่ยมด้านขนาน $ABCD$ ซึ่ง $\angle{A}<\ang{90}$ วงกลมที่มีเส้นผ่านศูนย์กลาง $AC$ ตัด $CB$ เเละ $CD$ อีกครั้งที่จุด $E$ เเละ $F$ ตามลำดับเเละ เส้นสัมผัสกับวงกลมนี้ที่จุด $A$ ตัด $BD$ ที่จุด $P$ จงเเสดงว่า $P,F,E$ อยู่บนส่วนของเส้นตรงเดียวกัน
+		\end{problem}
+		\begin{proof}[\underline{sketch proof}]
+			ข้อนี้จะเห็นได้ว่าต้องใช้ทฤษฎีบท Menelaus ในการเเก้โดยสมมติให้ $EF$ ตัดกับเส้นสัมผัสวงกลมที่$A$ คือ $P'$ เเล้วเเสดงให้ได้ว่า $A,D,P'$ อยู่บนเส้นตรงเดียวกันจะสรุปได้ว่า $P=P'$
+			\begin{itemize}
+				\item กำหนดให้ $|CA| = 2R$, $\angle{ACB} = \alpha$ เเละ $\angle{ACD} = \beta$
+				\item พยายามไล่ด้าน $|CB|, |BE|, |EF|, |FP|, |DF|$ เเละ $|CD|$ ให้อยู่ในรูป $\alpha, \beta$ เเละ $R$ โดยใช้ law of sine
+				\item ใช้ Menelaus's theorem กับ $\bigtriangleup{ECF}$ เเละ จุด $B, D$ เเละ $P$
+				\item เเทนค่าด้านที่หาตอนเเรกในสูตร Menelaus เเละจัดรูปตรีโกณให้เท่ากับ 1 ซึ่งค่อนข้างเยอะ
+			\end{itemize}
+			
+		\end{proof}
+		% ข้อ 9
+		\begin{problem}
+			กำหนด $\bigtriangleup{ABC}$ ซึ่ง $\angle{BAC} = \ang{40}$ เเละ $\angle{ABC} = \ang{60}$ ให้ $D, E$ เป็นจุดบนด้าน $AC, AB$ ตามลำดับ ซึ่ง $\angle{CBD} = \ang{40}$ เเละ $\angle{BCE} = \ang{70}$ ให้ $BD, CE$ ตัดกันที่จุด $F$ จงเเสดงว่า เส้นตรง $AF$ ตั้งฉากกับ $BC$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			เห็นได้ชัดจากทฤษฎีบท Ceva version ตรีโกณ
+		\end{proof}
+		\newpage
+		% ข้อ 10
+		\begin{problem}
+			ในสามเหลี่ยมมุมเเหลม $ABC$ ซึ่ง $AB \neq AC$ ให้ $V$ เป็นจุดที่เกิดจากจุดตัดของเส้นเเบ่งครึ่ง $\angle{A}$ เเละ $BC$ เเละให้ $D$ เป็นจุดบน $BC$ โดยที่ $AD$ ตั้งฉาก $BC$ ถ้า $E$ เเละ $F$ เป็นจุดตัดของวงกลมล้อมรอบ $AVD$ กับ $CA$ เเละ $AB$ ตามลำดับจงเเสดงว่า $AD,BE,CF$ ตัดกันที่จุดเดียวกัน
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]
+			เห็นได้ชัดว่าใช้ทฤษฎีบท Ceva โดยจัดรูปด้านที่ต้องการหาให้อยู่ในรูป $a,b,c$ เเละ $\angle{A},\angle{B},\angle{C}$
+		\begin{itemize}
+			\item ใช้ Menelaus กับ $\bigtriangleup{ABC}$ เเละ จุด $F,V,E$
+			\item สามารถหาด้าน $|BF|$ ได้จาก Power of point จุด $B$ ใช้สมการ $c|BF| = |OB|^2 - R^2$
+			\item หา $|OB|^2 - R^2$ จาก law of cosine $\bigtriangleup{ABO}$ ($O$ คือจุดศูนย์กลาง $AV$, $R$ คือรัศมีของวงกลม )
+			\item หา $|BD|$ ได้จาก $\bigtriangleup{ABD}$
+			\item เเสดงให้ได้ว่า $-bc\sin{\frac{B-C}{2} = R(c\cos{B} - b\cos{C})}$  จริง	จะจบการพิสูจน์ซึ่งค่อนข้างยากโดยจะเเทนค่าดังต่อไปนี้
+			\item ขั้นเเรก เเสดงให้ได้ก่อนว่า $R = \frac{\sqrt{bcs(s-a)}}{b+c}$ เมื่อ $s = \frac{a+b+c}{2}$
+			\item $\cos{B} = \frac{a^2-b^2+c^2}{2ac}$ เเละ $\cos{C} = \frac{a^2+b^2-c^2}{2ab}$
+			\item $\sin(X - Y) = \sin{X}\cos{Y} -\cos{X}\sin{Y}$
+			\item ใช้เอกลักษณ์ $\sin{\frac{A}{2}}$ = $\frac{\sqrt{(s-b)(s-c)}}{\sqrt{bc}}$ , $\cos{\frac{A}{2}}={\frac{\sqrt{s(s-a)}}{\sqrt{bc}}}$ ในทำนองเดียวกันกับ $\angle{B},\angle{C}$ ต้องเเสดงด้วยว่าเอกลักษณ์พวกนี้เป็นจริง
+
+		\end{itemize}
+		\end{proof}
+		\newpage
+		% ข้อ 11
+		\begin{problem}
+			ให้ $O$ เป็นจุดภายใน $\bigtriangleup{ABC}$ เเละ $D,E,F$ เป็นจุดตัดของ $AO,BO,CO$ กับ $BC,CA,AB$ ตามลำดับ สมมุติ $P$ เเละ $Q$ เป็นจุดบนส่วนของเส้นตรง $BE$ เเละ $CF$ ตามลำดับซึ่ง $\frac{BP}{PE} = \frac{CQ}{QF}= \frac{DO}{OA}$ จงเเสดงว่า $PF||QE$
+		\end{problem}
+		\begin{proof}[\underline{proof sketch}]เราจะเสนอวิธีอัดเเเกนคาร์ทีเซียน ในการเเก้โจทย์ข้อนี้
+		\begin{itemize}
+			\item โดยไม่เสียในสมมุติ ให้ $O$ คือจุด $(0,0), A$ คือ $(0,a), B$ คือ $(x_1,y_1)$ เเละ $C$ คือ $(x_2,y_2)$ 
+			\item จะได้จุด $D(0,\frac{x_2y_1 - x_1y_2}{x_2 - x_1}), E(\frac{ax_1x_2}{x_2y_1-x_1y_2+ax_1},\frac{ay_1x_2}{x_2y_1-x_1y_2+ax_1}), F(\frac{ax_1x_2}{x_1y_2-x_2y_1+ax_2},\frac{ay_2x_1}{x_1y_2-x_2y_1+ax_2})$ 
+			\item $\frac{|DO|}{|OA|} = \frac{x_2y_1-x_1y_2}{-a(x_2-x_1)}$ ใช้อัตราส่วนนี้ในการหาจุด $P,E$
+			\item $P(x_P,y_P) \rightarrow \frac{|DO|}{|OA|} = \frac{ x_1 - x_P}{x_P-x_E}  $
+			\item จะได้ $x_P = \frac{ax_1}{-a(x_2-x_1)+x_2y_1-x_1y_2}(\frac{x_2(x_2y_1-x_1y_2))}{x_2y_1-y_1x_2+ax_1}-(x_2-x_1))$
+			\item ในทำนองเดียวกันจะได้ $y_P =\frac{ay_1}{-a(x_2-x_1)+x_2y_1-x_1y_2}(\frac{x_2(x_2y_1-x_1y_2))}{x_2y_1-y_1x_2+ax_1}-(x_2-x_1))$
+			\item ให้ $M=\frac{(x_2y_1-x_1y_2)}{a}$ ความชันของเส้นตรง $FP$ คือ $\frac{y_P-y_F}{x_P-x_F}$
+			\item ซึ่งจัดรูปเเล้วจะได้ $\frac{\frac{y_1}{M+x_1}-\frac{y_2}{-M+x_2}}{\frac{x_1}{M+x_1}-\frac{x_2}{-M+x_2}}$
+			\item ซึ่งความชันของเส้นตรง $EF$ เกิดจากการสลับตัวเเปร $x_1$ เป็น $x_2$ เเละ $y_1$ เป็น $y_2$ สมการด้านบนซึ่งยังคงเป็นสมการเดิมดังนั้น $EF || FP$ 
+		\end{itemize}
+	
+			
+		\end{proof}
+	\newpage
+	\section{Miscellaneous problems}
+	\begin{problem}
+		กำหนด $\bigtriangleup{ABC}$ ซึ่งมี $\angle{A} = \ang{45}$ ให้ $D$ เป็นจุดบนด้าน $BC$ โดยที่ $\overline{AB} \perp \overline{BC}$ ถ้า $BD = 3$ เเละ $DC = 2 $ เเล้ว $[ABC]$ มีค่าเท่าไหร่
+	\end{problem}
+	\begin{problem}
+		ให้ $A, B$ เป็นจุดบนวงกลมที่มี $O$ เป็นจุดศูนย์กลาง ต่อ $AB$ ไปทาง $B$ ถึงจุด $P$ โดยที่ $\angle{AOP} = \ang{90}$ ถ้า $\tan{B\hat{O}P} + \tan{B\hat{P}O} = 2$ จงหาค่าของ $\frac{PA}{PB}$
+	\end{problem}
+	\begin{problem}
+		กำหนด $\bigtriangleup{ABC}$ ซึ่งมี $AB:AC = 4:3$ ให้ $M$ เป็นจุดกึ่งกลางด้าน $BC$ จุด $E$ เเละ $F$ เป็นจุดบน $AB$ เเละ $AC$ ตามลำดับ โดยที่ $AE:AF = 2:1$ ถ้า $EF$ ตัด $AM$ ที่จุด $G$ เเละ $GF = 72$ หน่วย เเล้ว $GE$ ยาวกี่หน่วย 
+	\end{problem}
+	\begin{problem}
+		กำหนด $\bigtriangleup{ABC}$ เป็นสามเหลี่ยมมุมเเหลม ให้ $AD, BE, CF$ เป็นส่วนสูง เเละ $H$ เป็นจุด orthocenter  ของ $\bigtriangleup{ABC}$ จงเเสดงว่า $\frac{AH}{AD} + \frac{BH}{BE} + \frac{CH}{CF} = 2$
+	\end{problem}
+	\begin{problem}
+		กำหนดให้ $\bigtriangleup{ABC}$ มี $D$ อยู่บนเส้นตรงที่ผ่าน $BC$ เเละ $F$ อยู่บน $AB$ เเละ $E$ อยู่บน $AC$ ให้ $AD$ เเบ่งครึ่งมุมภายนอก ให้ $BE$ เเละ $CF$ เเบ่งครึ่งมุมภายใน $\bigtriangleup{ABC}$ จงเเสดงว่า $D,E,F$ อยู่บนเส้นตรงเดียวกัน 
+	\end{problem}
+	\begin{problem}
+		ใน $\bigtriangleup{ABC} M$ เป็นศูนย์กลางของด้าน $BC AD$ เเบ่งครึ่ง $\angle{A}$ ตัด $BC$ ที่จุด $D$ วาด $\overline{BE} \perp \overline{AD}$ ตัด $AD$ ที่จุด $E$ ถ้า $AM$ ตัด $BE$ ที่จุด $P$ จงเเสดงว่า $AB||DP$
+	\end{problem}
+	\begin{problem}
+		ให้ $O$ เป็นวงกลมที่ล้อมรอบ $\bigtriangleup{ABC}$ เส้นสัมผัสวงกลมที่จุด $A, B, C$ ตัดเส้นตรง $BC, AC ,AB$ ที่จุด $P, Q, R$ ตามลำดับ จงพิสูจน์ว่า $P, Q, R$ อยู่บนเส้นตรงเดียวกัน
+	\end{problem}
+	\begin{problem}
+	
+		กำหนดให้ $P$ เป็นจุดภายใน $\bigtriangleup{ABC}$ ที่ทำให้ $\angle{APB}-\angle{ACB} = \angle{APC}-\angle{ABC}$ $ D,E$ เป็นจุดศูนย์กลางของวงกลมเเนบใน $\bigtriangleup{APB},APC$ ตามลำดับ จงเเสดงว่า $AP,BD,CE$ มีจุดตัดร่วมกัน
+	\end{problem}
+\end{document}
