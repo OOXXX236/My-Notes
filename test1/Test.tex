@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{fontspec}
+\usepackage{asymptote}
+\declaretheorem[style=thmbluebox,name={Identity}]{ID}
+\renewcommand{\theID}{\Roman{ID}}
+\title{\textbf{HOMEWORK}}
+\setmainfont[Scale = 1.4]{TH SarabunPSK}
+\author{S. Suebsang}
+\begin{document}
+	
+	\maketitle
+	
+	\begin{ID}
+		
+		\[ a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)  \]
+		\label{A}
+		
+	\end{ID}
+
+จากเอกลักษณ์ \ref{A} จะเห็นได้ว่า $a^3 + b^3 + c^3 - 3abc = 0 \iff a + b + c = 0\; \textrm{หรือ} \; a = b = c$ 
+
+\begin{example}
+	
+	ให้ $p$ เป็นจำนวนเฉพาะ จงหาคู่อันดับ $(x , y)$ ของจำนวนนับทั้งหมด ซึ่ง \[ x^3 + y^3 - 3xy = p - 1 \]
+	
+\end{example}
+
+\begin{proof}
+	
+	กำหนดให้ $z = 1$ จะเขียนสมการใหม่ได้เป็น $x^3 + y^3 + z^3 - 3xyz = p$ นั่นคือ
+		\[ (x + y + z)(x^2 + y^2 + z^2 - xy - xz - yz) = p\]
+		เนื่องจาก $x , y , z$ ทำให้ $x + y + z \ge 3$ ดังนั้น $x + y + z = p$ เเละ $x^2 + y^2 + z^2 - xy - xz - yz = 1$
+		\begin{align*}
+			x^2 + y^2 + z^2 - xy - xz - yz &= 1 \\
+			(x - y)^2 + (x - z)^2 + (y - z)^2 &= 2 
+		\end{align*}
+เนื่องจาก $x , y \ge 1$ กรณี $x ,y \ge 2$ ทั้งคู่จะเป็นได้กรณีเดียวคือ $x = y =2$ กรณี $x$ หรือ $y$ เท่า $1$ โดยไม่เสียนัยให้ $y = 1$ จะได้ $x = 2$ เเต่ $x + y + z = 4$ ไม่เป็นจำนวนเฉพาะดังนั้นกรณีนี้ไม่เกิดจะได้คำตอบ $(x , y) = (2 , 2)$ เท่านั้น   
+
+\end{proof}
+
+\begin{ID}
+	กำหนดให้ $abc = 1$ จะได้
+	\[  \frac{1}{ab+a+1} + \frac{1}{bc+b+1}  + \frac{1}{ca+c+1} = 1 \]
+	\label{B}
+\end{ID}
+
+จากเงื่อนไข $abc = 1$ เราจะสามารถเเทน $ \textstyle a = \frac{x}{y}, b = \frac{y}{z}, c = \frac{z}{x}$
+
+\begin{example}
+	ให้ $a , b , c$ เป็นจำนวนจริงบวก ซึ่ง $abc = 1$ จงเเสดงว่า \[ \cycsum \frac{2}{(a + 1)^2 + b^2 + 1} \le 1 \]
+\end{example}
+
+\begin{proof}
+	
+	จาก $(a + 1)^2 + b^2 + 1 = (a^2+b^2) + 2a + 2$ โดย AM-GM เเละใช้ \ref{B} จะได้
+	
+	\begin{align*}
+		\cycsum \frac{2}{(a + 1)^2 + b^2 + 1} &\le  \cycsum \frac{1}{ab+a+1}\\
+		\cycsum \frac{2}{(a + 1)^2 + b^2 + 1} &\le 1
+	\end{align*}
+
+\end{proof}
+
+\begin{example}
+	
+	พิจารณาจำนวนนับ $n \ge 2,$ เศษจากการหาร $2^{2^n}$ ด้วย $2^n - 1$  จะอยู่ในรูปกำลังของ $4$\\ จงเเสดงว่าข้อความข้างต้นจริงถ้าไม่จริงยกตัวอย่างค้าน 
+	
+\end{example}
+
+\begin{example}
+	
+	จงเเสดงว่า \[ \sum_{j = 1}^{n} \frac{(-1)^{j+1}}{j} {n\choose j} = 1 + \frac{1}{2} + \frac{1}{3} + \dots +\frac{1}{n} \]
+
+\end{example}
+
+\begin{example}
+	
+	หาคู่อันดับของจำนวนนับ $(n , k)$ ทั้งหมด ซึ่ง \[ (n + 1)^k = n! + 1
+	\]
+	
+\end{example}
+
+\begin{example}
+	
+	ให้ $x , y , z \in \RR^+$ จงเเสดงว่า \[ \sqrt{x(y + 1)} + \sqrt{y(z + 1)} + \sqrt{z(x + 1)} \le \sqrt{(x + 1)(y + 1)(z 1)} \]
+	
+\end{example}
+
+\end{document}
+
+
