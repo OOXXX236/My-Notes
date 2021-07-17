@@ -6,7 +6,7 @@
 \renewcommand{\theID}{\Roman{ID}}
 \title{\textbf{HOMEWORK}}
 \setmainfont[Scale = 1.4]{TH SarabunPSK}
-\author{S. Suebsang}
+\author{Sarawut Suebsang}
 \begin{document}
 	
 	\maketitle
@@ -59,8 +59,15 @@
 		\cycsum \frac{2}{(a + 1)^2 + b^2 + 1} &\le  \cycsum \frac{1}{ab+a+1}\\
 		\cycsum \frac{2}{(a + 1)^2 + b^2 + 1} &\le 1
 	\end{align*}
+จะเท่ากันเมื่อ $a = b = c$ จาก AM-GM
 
 \end{proof}
+
+\begin{theorem}[Euler]
+	ให้ $a , n$ เป็นจำนวนเต็ม เเละ $\gcd{( a, n)} =1$ จะได้ \[ a^{\phi{(n)}} \equiv 1 \pmod{n} \]
+\end{theorem}
+
+$\phi{(n)} =\#  \{ a \in \NN : 1 \le a \le n \textrm{เเละ} \gcd{(a , b)} = 1 \} $
 
 \begin{example}
 	
@@ -68,11 +75,73 @@
 	
 \end{example}
 
+\begin{proof}
+	ไม่จริง เช่น $n = 25$ จะได้ 
+	\begin{align*}
+		2^{25} &\equiv 1 \pmod{2^{25} - 1}\\	2^{2^{25}} &\equiv 2^{2^{25}  \pmod{25}} \pmod{2^{25} - 1}
+	\end{align*}
+
+จากออยเลอร์ จะได้ $2^{20} \equiv 1 \pmod{25} $ ดังนั้น 
+\[ 2^{2^{25}} \equiv 2^{7} \pmod{2^{25} - 1} \] ซึ่ง $2^7$ ไม่เป็นกำลังของ $4$
+	
+
+\end{proof}
+
+\begin{ID}[Binomial coefficient
+	]
+	\[ (x + y)^n = \sum_{k=0}^{n} { n \choose k}x^{n-k}y^k \]
+	\label{C}
+\end{ID}
+
+\begin{ID}
+	\[ {n+1 \choose k+1} = {n \choose k} + {n \choose k+1}  \]
+	\label{D}
+\end{ID}
+
+\begin{ID}
+	\[ {n+1 \choose k+1} = \frac{n+1}{r+1}{n \choose r} \]\label{E}
+\end{ID}
+
 \begin{example}
 	
 	จงเเสดงว่า \[ \sum_{j = 1}^{n} \frac{(-1)^{j+1}}{j} {n\choose j} = 1 + \frac{1}{2} + \frac{1}{3} + \dots +\frac{1}{n} \]
 
 \end{example}
+
+\begin{proof}
+	เนื่องจาก ${n \choose j} = 0 $ ถ้า $j > n$ ดังนั้นจากโจทย์เขียนใหม่ได้เป็น \[ S_n = \sum_{j = 1}^{\infty} \frac{(-1)^{j+1}}{j} {n\choose j} = 1 + \frac{1}{2} + \frac{1}{3} + \dots +\frac{1}{n} \]
+	เราจะอุปนัยบน $n$ ให้ $P(n)$ เเทนสมการที่โจทย์ให้เเสดง \\
+	\underline{\bfseries{ขั้นฐาน}} เห็นได้ชัดว่า $P(1)$ จริง \\
+	\underline{\bfseries{ขั้นอุปนัย}} สมมติ $P(n)$ จริง เมื่อ $k \ge 1$ จะเเสดง $P(n+1)$ จริง \\
+	$P(n+1)$ จริง $\iff S_{n+1} - S_{n} = \frac{1}{n+1}$
+	\begin{align*}
+		&\iff \sum_{j = 1}^{\infty} \frac{(-1)^{j+1}}{j} \left[{n+1\choose j} - {n\choose j }\right ]=  \frac{1}{n+1}  \\
+		&\iff \sum_{j = 1}^{\infty} \frac{(-1)^{j+1}}{j} {n\choose j-1} =  \frac{1}{n+1}  (\textrm{จาก}
+		\ref{D})\\
+		&\iff \sum_{j = 1}^{\infty}(-1)^{j+1}{n+1 \choose j} = 1 \; \;  (\textrm{จาก}
+		\: \ref{E} \: \textrm{เเละเป็นจริงจากเเทน} \: \ref{C} \:  \textrm{ด้วย} \: x = 1, y=-1)
+	\end{align*}
+	ดังนั้น $P(n+1)$ เป็นจริงจากหลักอุปนัยเชิงคณิตศาสตร์จึงสรุปได้ว่า $P(n)$ เป็นจริงทุก $n \in \NN$
+\end{proof}
+
+\begin{lemma}
+	ให้ $ n \in \NN, n+1| n! \iff n+1$ เป็นจำนวนประกอบ
+	\label{F}
+\end{lemma}
+\begin{proof}
+	ให้ $n \in \NN$ \\
+ $(\Rightarrow)$ \; สมมุติ \; $n+1 | n!$ \\
+ จะพิสูจน์โดยหาข้อขัดเเย้ง สมมุติ \; $n+1$ \; ป็นจำนวนเฉพาะ \\ จะได้ \; $\gcd{(n + 1, i)} = 1 $ เมื่อ $i = 1 ,2 ,3,\dots,n$ \\
+ นั่นคือ \; $\gcd{(n+1,n!)} = 1$ \; ซึ่งขัดเเย้ง  
+ ดังนั้น $n+1$ เป็นจำนวนประกอบ \\
+ $(\Leftarrow)$ สมมุติ $n$ เป็นจำนวนประกอบ \\
+ ดังนั้นจะมี $a , b$ ซึ่ง $n+1=ab$ เเละ $1< a \le b < n+1$ \\
+ กรณี $a \neq b
+  $ จะได้ $n+1 | 1 \times \dots \times a  \dots \times b \times \dots \times n = n!$ \\
+ กรณี $a = b$ จะได้ $n+1 | 1 \times \dots \times a  \dots \times 2a \times \dots \times n = n!$ \\
+ ดังนั้น $n+1| n!$
+ 
+\end{proof} 
 
 \begin{example}
 	
@@ -80,10 +149,23 @@
 	\]
 	
 \end{example}
+\begin{proof}
+	จากโจทย์ $n+1 \not| n! $ เเล้วใช้ \ref{F} จะได้ $n+1$ เป็นให้จำนวนเฉพาะ ให้ $p = n+1$ \\
+	เขียนใหม่ได้เป็น $p^k = (p-1)! +1$ ซึ่งจะรูปเเล้วจะได้ \[ p^{k-1} + p^{k-2} +...+p+1 = (p-2)! \]
+	\underline{กรณี $p-1$ เป็นจำนวนเฉพาะหรือหนึ่ง }จะสรุปได้ว่า $(n,k)=(2,1),(1,1)$ ซึ่งสอดคล้องกับโจทย์ \\
+	\underline{กรณี $p - 1$ เป็นจำนวนประกอบ }จาก \ref{F} ได้ $p-1 | (p-2)!$ ทำให้ \begin{align*} p^{k-1} + p^{k-2} +...+p+1 &\equiv 0 \pmod{p-1} \\
+		k &\equiv 0 \pmod{p-1} \\
+		k &= pq \; \textrm{บาง} \; q \in \NN
+	 \end{align*}
+ เเทน $k$ กลับไปสมการเเรกจะได้ $ p^{pq} = (p-1)! +1$ จาก $(p-1)! \le (p-1)^p$ \\
+ ทำให้ $p^{pq}<(p-1)^p+1$ จะเห็นได้ว่าถ้า $q>1$ จะขัดเเย้งดังนั้น $q=1$ \\
+ พิจารณา $ p^p-(p-1)^p = p^{p-1}+p^{p-2}{p-1} +...+(p-1)^{p-1}  >1$ ขัดเเย้ง \\
+ ดังนั้นคำตอบ $(n,k) = (1,1),(2,1)$ เท่านั้น
+\end{proof}
 
 \begin{example}
 	
-	ให้ $x , y , z \in \RR^+$ จงเเสดงว่า \[ \sqrt{x(y + 1)} + \sqrt{y(z + 1)} + \sqrt{z(x + 1)} \le \sqrt{(x + 1)(y + 1)(z 1)} \]
+	ให้ $x , y , z \in \RR^+$ จงเเสดงว่า \[ \sqrt{x(y + 1)} + \sqrt{y(z + 1)} + \sqrt{z(x + 1)} \le \frac{3}{2}\sqrt{(x + 1)(y + 1)(z + 1)} \]
 	
 \end{example}
 

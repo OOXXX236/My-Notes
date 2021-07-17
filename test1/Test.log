@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.6.28) (preloaded format=xelatex 2021.7.16)  17 JUL 2021 13:18
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.6.28) (preloaded format=xelatex 2021.7.16)  17 JUL 2021 23:57
 entering extended mode
 **./Test.tex
 (Test.tex
@@ -1553,24 +1553,45 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 66.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 66.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 72.
+(mdframed)              on input line 73.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 91.
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 73.
+(amsmath)                 on input line 92.
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 78.
+(mdframed)              on input line 97.
+LaTeX Font Info:    Font shape `TU/THSarabunPSK(0)/b/n' will be
+(Font)              scaled to size 13.99994pt on input line 99.
+[2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 85.
-LaTeX Font Info:    Font shape `TU/THSarabunPSK(0)/b/n' will be
-(Font)              scaled to size 13.99994pt on input line 90.
-[2] (Test.aux)
+(mdframed)              on input line 102.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 106.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 128.
+Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
+line 128.
+ [3]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 147.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 167.
+ [4] (Test.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1578,12 +1599,12 @@ Package rerunfilecheck Info: File `Test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34598 strings out of 411279
- 704413 string characters out of 2833314
- 1278375 words of memory out of 3000000
- 54503 multiletter control sequences out of 15000+600000
+ 34621 strings out of 411279
+ 704766 string characters out of 2833314
+ 1278823 words of memory out of 3000000
+ 54526 multiletter control sequences out of 15000+600000
  411397 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,20n,128p,10624b,1114s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Test.pdf (2 pages).
+Output written on Test.pdf (4 pages).
