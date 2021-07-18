@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.6.28) (preloaded format=xelatex 2021.7.16)  17 JUL 2021 23:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (MiKTeX 21.6.28) (preloaded format=xelatex 2021.7.16)  18 JUL 2021 12:43
 entering extended mode
 **./Test.tex
 (Test.tex
@@ -1590,8 +1590,11 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 147.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 167.
- [4] (Test.aux)
+(mdframed)              on input line 166.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+ [4] [5] (Test.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1599,12 +1602,12 @@ Package rerunfilecheck Info: File `Test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34621 strings out of 411279
- 704766 string characters out of 2833314
- 1278823 words of memory out of 3000000
- 54526 multiletter control sequences out of 15000+600000
+ 34626 strings out of 411279
+ 704863 string characters out of 2833314
+ 1278956 words of memory out of 3000000
+ 54531 multiletter control sequences out of 15000+600000
  411397 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  123i,20n,128p,10624b,1114s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Test.pdf (4 pages).
+Output written on Test.pdf (5 pages).

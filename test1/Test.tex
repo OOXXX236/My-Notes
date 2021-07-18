@@ -158,16 +158,44 @@ $\phi{(n)} =\#  \{ a \in \NN : 1 \le a \le n \textrm{เเละ} \gcd{(a , b)}
 		k &= pq \; \textrm{บาง} \; q \in \NN
 	 \end{align*}
  เเทน $k$ กลับไปสมการเเรกจะได้ $ p^{pq} = (p-1)! +1$ จาก $(p-1)! \le (p-1)^p$ \\
- ทำให้ $p^{pq}<(p-1)^p+1$ จะเห็นได้ว่าถ้า $q>1$ จะขัดเเย้งดังนั้น $q=1$ \\
+ ทำให้ $p^{pq} \le (p-1)^p+1$ จะเห็นได้ว่าถ้า $q>1$ จะขัดเเย้งดังนั้น $q=1$ \\
  พิจารณา $ p^p-(p-1)^p = p^{p-1}+p^{p-2}{p-1} +...+(p-1)^{p-1}  >1$ ขัดเเย้ง \\
  ดังนั้นคำตอบ $(n,k) = (1,1),(2,1)$ เท่านั้น
 \end{proof}
+
+\begin{theorem}[The rearrangement Inequality]
+	ให้ $a_1 \le a_2 \le \dots \le a_n$ เเละ $b_1 \le b_2 \le \dots \le b_n$ เป็นจำนวนจริง สำหรับการเรียงสับเปลี่ยน $(a'_1,a'_2,\dots,a'_n)$ ของ $(a_1,a_2,\dots,a_n)$ จะได้
+	\begin{align*}
+		a_1b_1+a_2b_2+\dots +a_nb_n &\ge	a'_1b_1+a'_2b_2+\dots +a'_nb_n  \\
+		& \ge a_nb_1+a_{n-1}b_2+\dots +a_1b_n
+	\end{align*}
+	\label{G}
+\end{theorem}
 
 \begin{example}
 	
 	ให้ $x , y , z \in \RR^+$ จงเเสดงว่า \[ \sqrt{x(y + 1)} + \sqrt{y(z + 1)} + \sqrt{z(x + 1)} \le \frac{3}{2}\sqrt{(x + 1)(y + 1)(z + 1)} \]
 	
 \end{example}
+
+\begin{proof}จากโจทย์จัดรูปใหม่ได้เป็น
+	\[ \sqrt{\frac{x}{(x+1)(z+1)}} + \sqrt{\frac{y}{(y+1)(x+1)}} + \sqrt{\frac{z}{(z+1)(y+1)}} \le \frac{3}{2} \]
+  เนื่องจากอสมการข้างต้น Cyclic โดยไม่เสียนัยสมมุติให้ $\max\{x,y,z\} =x$ \\
+ \underline{ กรณี $x \ge y \ge z$ } \[ \sqrt{\frac{x}{x+1}} \ge  \sqrt{\frac{y}{y+1}} \ge  \sqrt{\frac{z}{z+1}} \]
+ \[ \sqrt{\frac{1}{z+1}} \ge \sqrt{\frac{1}{y+1}} \ge \sqrt{\frac{1}{x+1}} \]
+ โดย \ref{G} จะได้
+ \[ \cycsum \sqrt{\frac{x}{(x+1)(z+1)}} \le \sqrt{\frac{x}{(x+1)(z+1)}} + \sqrt{\frac{z}{(x+1)(z+1)}} + \sqrt{\frac{y}{(y+1)^2}} \]
+ จาก โคชีจะได้ $\sqrt{x} + \sqrt{z} \le \sqrt{(x+1)(1+z)} $ เเละจาก $0<(y-1)^2$ ได้ 
+ $\sqrt{\frac{y}{(y+1)^2}} \le \frac{1}{2}$ \\
+ ดังนั้น\[ \cycsum \sqrt{\frac{x}{(x+1)(z+1)}} \le \frac{3}{2} \] \\
+  \underline{ กรณี $x \ge z \ge y$ } 
+\[ \sqrt{\frac{x}{x+1}} \ge  \sqrt{\frac{z}{z+1}} \ge  \sqrt{\frac{y}{y+1}} \]
+ \[ \sqrt{\frac{1}{y+1}} \ge \sqrt{\frac{1}{z+1}} \ge \sqrt{\frac{1}{x+1}} \]
+ โดย \ref{G} จะได้
+ \[ \cycsum \sqrt{\frac{x}{(x+1)(z+1)}} \le \sqrt{\frac{x}{(x+1)(y+1)}} + \sqrt{\frac{y}{(x+1)(y+1)}} + \sqrt{\frac{x}{(x+1)^2}} \]
+ จาก โคชีจะได้ $\sqrt{x} + \sqrt{y} \le \sqrt{(x+1)(1+y)} $ เเละจาก $0<(z-1)^2$ ได้ 
+ $\sqrt{\frac{z}{(z+1)^2}} \le \frac{1}{2}$ \\
+\end{proof}
 
 \end{document}
 
