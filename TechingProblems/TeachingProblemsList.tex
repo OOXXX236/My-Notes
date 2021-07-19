@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[sexy]{evan}
+\usepackage{fontspec}
+\usepackage{asymptote}
+\title{\textbf{Problems}}
+\setmainfont[Scale = 1.4]{TH SarabunPSK}
+\author{Sarawut Suebsang}
+\begin{document}
+	\maketitle
+\section{Number theory}
+
+	\begin{example}
+		ให้ $m,n$ เป็นจำนวนเต็มบวกโดยที่ $\gcd(a,b) = 1 $, $m$ เป็นจำนวนคู่ เเละ $n$ เป็นจำนวนคี่ จงหาค่าของ \[ \frac{1}{2n} + \sum_{k=1}^{n-1}(-1)^{\floor{\frac{km}{m}}}\Big\{ \frac{km}{m} \Big\} \] 
+	\end{example}
+
+	\begin{example}
+		จงหาจำนวนเฉพาะ $p$ ทั้งหมด ซึ่ง $p = m^2+n^2$ เเละ $p$ หาร $m^3+n^3-4$ ลงตัว \\ 
+		สำหรับจำนวนเต็มบวก $m,n$ บางค่า
+	\end{example}
+	\begin{example}
+		ให้ $a_1,a_2,\dots,a_k$ เป็นจำนวนเต็มบวก เเละ $d = \gcd(a_1,a_2,\dots,a_k) $ เเละ \\ $a_1+a_2+\dots+a_k = n$ จงเเสดวง่า $\frac{d(n-1)!}{a_1!a_2!\dots a_k!}$ เป็นจำนวนเต็ม
+	\end{example}
+	\begin{example}
+		ให้ $p \ge 2$ เป็นจำนวนเฉพาะ จงหาค่า $k$ ทั้งหมดซึ่ง $S_k = 1^k+2^k+\dots+(p-1)^k$ \\ หารด้วย $p$ ลงตัว
+	\end{example}
+	\begin{example}
+		ให้ $p \ge 3$ เป็นจำนวนเฉพาะ นิยาม 
+		\[	F(p) = \sum_{k=1}^{\frac{p-1}{2}} k^{120}, f(p) = \frac{1}{2}- \Big\{ \frac{F(p)}p{} \Big\} \; \textrm{โดยที่} \; {x} = x-\floor{x}
+		\]
+		จงหาค่าของ $f(p)$
+	\end{example}
+	\begin{example}
+			ให้ $p \ge 3$ เป็นจำนวนเฉพาะ จงหาฟังก์ชัน $f: \ZZ \rightarrow \ZZ$ ทั้งหมดซึ่ง สำหรับเเต่ละ $m,n \in \ZZ$\\ $1.$ ถ้า $m \equiv n \pmod p$ เเล้ว $f(m) = f(n)$ 
+			\: $2. f(mn) = f(m)f(n)$ 
+	\end{example}
+	\begin{example}
+		จงหาจำนวนเฉพาะ $p$ ทั้งหมด ที่ทำให้ ${100 \choose p} + 7$ หารด้วย $p$ ลงตัว
+	\end{example} 
+	\begin{example}
+		จงหาจำนวนเต็มบวก $N$ ทั้งหมดที่มีตัวประกอบเฉพาะอย่างน้อยสองจำนวนเเละ $N$\\ มีค่าเท่ากับผลบวกของกำลังสองของตัวหารบวกที่มีค่าน้อยที่สุด $4$ จำนวนเเรก
+	\end{example}
+	\begin{example}
+		ให้ $a$ เเละ $b$ เป็นจำนวนเต็ม เเละ $p$   เป็นจำนวนเฉพาะ สำหรับเเต่ละจำนวนนับ $k$ ใดๆ\\ กำหนด$ A_k = \{ n \in \NN : p^k | a^n-b^n \}$ จงเเสดงว่าถ้า $A_1 \neq \emptyset$ เเล้ว $A_k \neq \emptyset$ สำหรับทุก จำนวนนับ $k$
+	\end{example}
+	\begin{example}
+		ให้ $p$ เป็นจำนวนเฉพาะคี่ จงหาเศษจากการหาร $ \displaystyle \sum_{k=0}^{p}k!(p-k)!$ ด้วย $p$
+	\end{example}
+	\begin{example}
+		ให้ $a,b$ เเละ $c$ เป็นจำนวนเต็มบวกซึ่ง $a|b^c$ จงเเสดงว่า $a|b^a$
+	\end{example}
+	\begin{example}
+		จงหา $(a,b,c)$ ของจำนวนเต็มบวกทั้งหมดซึ่ง $(1+\frac{1}{a})(1+\frac{1}{b})(1+\frac{1}{c}) = 2$
+	\end{example}
+	\begin{example}
+		จงหาจำนวนเต็มบวก $n$ ทั้งหมดซึ่ง $-5^4+5^5+5^n$ เป็นกำลังสองสมบูรณ์ ทำนอง\\
+		เดียวกัน จงหาจำนวนเต็มบวก $n$ ทั้งหมด ซึ่ง $2^4+2^7+2^n$ เป็นกำลังสองสมบูรณ์
+	\end{example} 
+
+	\begin{example}
+		จงหาจำนวนสองหลัก $n = 10a+b$ โดยที่ $a,b \in \{ 0,1,2,\dots , 9 \}$ ซึ่ง ทุกจำนวนเต็ม $k$\\ $n | k^a-k^b$
+	\end{example}
+
+	\begin{example}
+		กำหนดให้ $x_1,x_2,\dots,x_k$ เป็นจำนวนเต็มซึ่ง $x_1+x_2+\dots+x_k = 1492$ จงเเสดงว่า \[ x_1^7+x_2^7+\dots+x_k^7 \neq 1998 \]
+	\end{example}
+	\begin{example}
+			กำหนดให้ $p_1<p_2<\dots<p_{31}$ เป็นจำนวนเฉพาะ ถ้า $30$ หาร  $p_1^4+p_2^4+\dots+p_{31}^4$ ลงตัว \\ จงเเสดงว่ามี $k$ ซึ่ง $p_k,p_{k+1},p_{k+2}$ เป็นจำนวนเฉพาะที่เรียงติดกัน 
+	\end{example}
+	\begin{example}
+		ให้หาคู่อันดับของจำนวนเต็มบวก $(m,n)$ ทั้งหมดซึ่งทำให้ \[  [\phi(m)]^2-19[\phi(m)] = [\phi(n)]^2-91 \]
+	\end{example}
+	\begin{example}
+		จงหาจำนวนเฉพาะ $p$ ทั้งหมดที่ทำให้ $2p^2-3p-1$ เป็นกำลังสามของจำนวนเต็มบวก
+	\end{example}
+	\begin{example}
+		จงหาพหุนาม $P(x)$ ทั้งหมดที่มีสัมประสิทธิ์เป็นจำนวนเต็ม ซึ่ง $2557^n+213\cdot2014$ หารด้วย $P(n)$ ลงตัว สำหรับเเต่ละจำนวนเต็มบวก $n$
+	\end{example}
+	\begin{example}
+		จงเเสดงว่าไม่มีจำนวนเฉพาะ $p,q$ ที่ทำให้ $2014p^{2557} + 1 = q^{2014}$
+	\end{example}
+	\begin{example}
+		จงหาจำนวนเต็มบวก $n$ ที่มีค่ามากที่สุด เเละ มีค่าน้อยที่สุด ซึ่ง $2552$ เป็นตัวประกอบ เเละมี\\ จำนวนตัวหารที่เป็นบวกทั้งหมดเท่ากับ $2009$
+	\end{example}
+	\begin{example}
+		ให้ $p$ เป็นจำนวนเฉพาะที่อยู่ในรูป $4k+3$ เมื่อ $k$ เป็นจำนวนเต็มบวกหรือศูนย์ ถ้า $m$ เเละ $n$ เป็นจำนวนเต็มซึ่ง $p|m^2+n^2$ เเล้ว $p^2|m^2+n^2$
+	\end{example}
+	\begin{example}
+		จงเเสดงว่าไม่มีคู่อันดับ $(x,y)$ ของจำนวนเต็ม ที่สอดคล้องกับสมการ $2560x^2+5x+6 = y^5$
+	\end{example}
+	\begin{example}
+		สำหรับจำนวนเต็มบวก $n$ กำหนดให้ $S(n)$ เเทนผลรวมของเลขโดดใน $n$ จงหาจำนวนเฉพาะ $p$ \\ทั้งหมดซึ่ง $S(p^{p+2})=S((p+2)^p)$
+	\end{example}
+\section{Combinatorics}
+
+\section{Algebra}
+\end{document}
