@@ -4,38 +4,118 @@
 \usepackage{asymptote}
 \title{\textbf{Problems}}
 \setmainfont[Scale = 1.4]{TH SarabunPSK}
+\declaretheorem[style=thmbluebox,name={Identity}]{ID}
+\renewcommand{\theID}{\Roman{ID}}
 \author{Sarawut Suebsang}
 \begin{document}
 	\maketitle
 \section{Number theory}
 
 	\begin{example}
-		ให้ $m,n$ เป็นจำนวนเต็มบวกโดยที่ $\gcd(a,b) = 1 $, $m$ เป็นจำนวนคู่ เเละ $n$ เป็นจำนวนคี่ จงหาค่าของ \[ \frac{1}{2n} + \sum_{k=1}^{n-1}(-1)^{\floor{\frac{km}{m}}}\Big\{ \frac{km}{m} \Big\} \] 
+		ให้ $m,n$ เป็นจำนวนเต็มบวกโดยที่ $\gcd(m,n) = 1 $, $m$ เป็นจำนวนคู่ เเละ $n$ เป็นจำนวนคี่ จงหาค่าของ \[ \frac{1}{2n} + \sum_{k=1}^{n-1}(-1)^{\floor{\frac{km}{n}}}\Big\{ \frac{km}{n} \Big\} \] 
 	\end{example}
+\begin{proof}
+	ให้ $r_k = (km\mod n)$ จะได้ $\Big\{ \frac{km}{n} \Big\} = \frac{r_k}{n}$ เเละ $\floor{\frac{km}{n}} = \frac{km-r_k}{n}$
+	พิจารณา \[ 
+	\frac{km-r_k}{n} \equiv r_k \pmod 2 \]
+	จะได้ $ (-1)^{\floor{\frac{km}{n}}} = (-1)^{r_k} $ เเละจาก $\gcd(m,n) =1$ เเสดงว่า $(km \mod n) , k=1,2,\dots,n-1$ ต่างกันหมด ดังนั้นจากโจทย์จะเขียนใหม่ได้เป็น \\
+	\[ \frac{1}{2n}+\frac{1}{n} \sum_{r=1}^{n-1} (-1)^rr = \frac{1}{2} \]
+	  
+\end{proof}
 
 	\begin{example}
 		จงหาจำนวนเฉพาะ $p$ ทั้งหมด ซึ่ง $p = m^2+n^2$ เเละ $p$ หาร $m^3+n^3-4$ ลงตัว \\ 
 		สำหรับจำนวนเต็มบวก $m,n$ บางค่า
 	\end{example}
+\begin{proof}
+	\[ (m+n)^2 \equiv 2mn \pmod p \] จะได้
+	\begin{align*}
+		(m+n)^3 & \equiv m^3+n^3+ 3mn(m+n) \pmod p \\
+		m^3+n^3 &\equiv (m+n)^3 - 3mn(m+n) \pmod p \\
+		2(m^3+n^3 )&\equiv 2(m+n)^3 -3(m+n)(2mn) \pmod p \\
+		2(m^3+n^3 )&\equiv - (m+n)^3 \pmod p
+	\end{align*}
+จาก $m^3+n^3 - 4 \equiv 0 \pmod p$ จะได้ $(m+n)^3+8 \equiv 0 \pmod p$ นั่นคือ \[ p |(m+n+2)((m+n)^2-2(m+n)+4) \] 	จะได้ \[ p| m+n+2 \: \textrm{หรือ} \: p|2mn-4(m+n)+4 \]
+ในกรณี $p =2,5$ เห็นชัดว่าสอดคล้องกับที่โจทย์ต้องการ 
+พิจารณา กรณี $p\ge13$ จะได้ \[ p| m+n+2 \: \textrm{หรือ} \: p|mn-(m+n)+2 \]
+ จาก $p = m^2+n^2$ จะได้ $max\{m,n \} > \sqrt{\frac{13}{2}}$  นั่นคือ $max\{m,n \}  \ge 3$ \\ ดังนั้น $m(m-1)+n(n-1) > 2$ หรือ $p>m+n+2$จะได้ $p \not |
+ m+n+ 2$ \\ จะได้ $p | mn-(m+n)+2 $ เท่านั้น  , $mn-(m+n)+2 =(m-1)(n-1)+1 >0$ 
+ เนื่องจาก $max\{m,n\}^2 > (m-1)(n-1) $ จะได้ $p> (m-1)(n-1)+1$ ดังนั้นกรณีนี้ไม่มีคำตอบ
+\end{proof}
+
+	\begin{theorem*}[triangle inequality of floor function] ให้ $a,b \in \RR$
+		\[ \floor{a+b} \ge \floor{a}+ \floor{b} \]
+
+	\end{theorem*}
+	\begin{theorem*}[Legendre's formula]
+		สำหรับ $p$ เป็นจำนวนเฉพาะให้ $v_p(n)$ คือเลขชี้กำลังที่มากของสุดของ $p$ ซึ่งหาร $n$ ลงตัว จะได้ \[ v_p(n!) = \sum_{i=1}^{\infty} \floor{\frac{n}{p^i}} \]
+
+	\end{theorem*}
 	\begin{example}
 		ให้ $a_1,a_2,\dots,a_k$ เป็นจำนวนเต็มบวก เเละ $d = \gcd(a_1,a_2,\dots,a_k) $ เเละ \\ $a_1+a_2+\dots+a_k = n$ จงเเสดวง่า $\frac{d(n-1)!}{a_1!a_2!\dots a_k!}$ เป็นจำนวนเต็ม
 	\end{example}
+\begin{proof}
+ก่อนอื่นจะพิจารณาสมบัติที่ต้องใช้เเก้โจทย์
+	\begin{claim*}
+		ให้ $a,b \in \ZZ$ ถ้า $b \not | a$ เเล้ว$ \floor{\frac{a}{b}} =\floor{\frac{a-1}{b}}$
+	\end{claim*}
+เนื่องจาก $b \not | a$ ให้ $a = bq+r$ เมื่อ $0<r <b$ จะได้ $q= \floor{\frac{a}{b}}=\floor{\frac{a-1}{b}}$ \\ ให้ $p$ เป็นจำนวนเฉพาะใดๆ
+ต่อไปเราจะเเสดงว่า $v_p(d(n-1)!) \ge \sum_{i=1}^{k} {v_p(a_i!)}$\\
+เราจะใช้ triangle inequality of floor function เเละ Legendre's formula เพื่อเเสดงอสมการข้างต้น\\
+$v_p(d(n-1)!) = v_p(d)+v_p((n-1)!) = v_p(d) + \sum_{i=1}^{\infty} \floor{\frac{n-1}{p^i}}$ เเละ $ \sum_{j=1}^{k}v_p{(a_j)} = \sum_{j=1}^{k}\sum_{i=1}^{\infty} \floor{\frac{a_j}{p^i}}$ \\
+จัดรูปอสมการใหม่จะได้ \[ v_p(d) + \sum_{i=1}^{\infty} \floor{\frac{n-1}{p^i}} \ge \sum_{j=1}^{k}\sum_{i=1}^{\infty} \floor{\frac{a_j}{p^i}}  \] หรือ 
+\[	v_p(d) + \sum_{i=1}^{\infty}\Big( \floor{\frac{n-1}{p^i}} -\sum_{j=1}^{k}\floor{\frac{a_j}{p^i}}  \Big) \ge 0 \]
+ในกรณี $p\nmid d$ จะได้ $v_p(d)=0$ เเละจะมี $l$ ซึ่ง  $p \nmid  a_l$ จากที่ Claim ไว้จะได้ $\floor{\frac{a_l}{p^i}} = \floor{\frac{a_l-1}{p^i}}$
+ ดังนั้นเราสามารถเปลี่ยน $a_l$ เป็น $a_l-1$ เเละจาก  triangle inequality of floor function ทำให้ได้ \[ \floor{\frac{n-1}{p^i}} \ge \sum_{j=1}^{k}\floor{\frac{a_j}{p^i}} \]
+ ดังนั้นอสมการที่เราต้องการเเสดงเป็นจริงในกรณี $p \nmid d $ \\
+กรณี $ p \mid d$ ถ้าหาก $i > v_p(d) $ใช้เหตุผลคล้ายกรณีเเรกจะได้  \[ \floor{\frac{n-1}{p^i}} \ge \sum_{j=1}^{k}\floor{\frac{a_j}{p^i}} \] ถ้าหาก $i \le v_p(d)$ เราจะเเบ่ง $1$ จาก $v_p(i)$ ให้กับเเต่ละวงเล็บ $i \le v_d(p)$ ซึ่งเพียงพอพอที่จะพิสูจน์ \[ 1 + \floor{\frac{n-1}{p^i}} \ge \sum_{j=1}^{k}\floor{\frac{a_j}{p^i}} \] ซึ่งเป็นจริงจาก $1 + \floor{\frac{n-1}{p^i}} \ge \floor{\frac{n-1}{p^i}}$ เเละ  triangle inequality of floor function
+\end{proof}
+\begin{theorem*}[primitive roots]
+	ให้ $p$ เป็นจำนวนเฉพาะ จะมีจำนวนเต็ม $g$ เรียกว่า \textcolor{blue}{primitive root} ซึ่ง order ของ $g$ ใน modulo $p$ เท่ากับ $p-1$
+\end{theorem*}
+Order ของ a ใน modulo p = k หมายถึงจำนวนเฉพาะที่เล็กที่สุดที่ $a^k \equiv 1 \pmod p$
 	\begin{example}
 		ให้ $p \ge 2$ เป็นจำนวนเฉพาะ จงหาค่า $k$ ทั้งหมดซึ่ง $S_k = 1^k+2^k+\dots+(p-1)^k$ \\ หารด้วย $p$ ลงตัว
 	\end{example}
+\begin{proof}
+	ให้ $g$ เป็น primitive root ใน modulo $p$  
+	\\ จะได้ $ \{1^k,2^k,\dots,
+	(p-1)^k \} = \{ g^{1k}, g^{2k},\dots, g^{(p-1)k} \}$ ใน modulo $p$ \\
+	ในกรณี $p-1 \mid k$ จะได้ $S_k \equiv -1 \pmod p$ \\
+	ในกรณี $p-1 \nmid k$ จะได้ \begin{align*}
+		S_k &\equiv  g^{1k}+ g^{2k} + \dots+ g^{(p-1)k} \pmod p \\
+		& \equiv \frac{g^k(g^{k(p-1)} -1)}{g^k-1}  \pmod p \\
+		& \equiv 0 \pmod p
+	\end{align*}
+ทุก $k \in \NN$ โดยที่ $p-1 \nmid k$ จะสอดคล้องกับที่โจทย์ต้องการ
+\end{proof}
 	\begin{example}
 		ให้ $p \ge 3$ เป็นจำนวนเฉพาะ นิยาม 
 		\[	F(p) = \sum_{k=1}^{\frac{p-1}{2}} k^{120}, f(p) = \frac{1}{2}- \Big\{ \frac{F(p)}p{} \Big\} \; \textrm{โดยที่} \; {x} = x-\floor{x}
 		\]
 		จงหาค่าของ $f(p)$
 	\end{example}
+\begin{proof}
+	จาก $i^2 \equiv(p-i)^2 \pmod p$ ดังนั้น $2F(p) \equiv 1^{120}+2^{120}+\dots (p-1)^{120} \pmod p $ จากข้อก่อนหน้าจะได้ $2F(p) \equiv   \begin{cases}
+		0, & \text{if}\ p-1 \nmid 120 \\
+		p-1, & \text{otherwise}
+	\end{cases}$ เเละ $\big\{ \frac{F(p)}{p} \big\} =  \frac{F(p)\mod p}{p}$
+\\ นั่นคือ $f(p) = \begin{cases}
+	\frac{1}{2}  & \text{if}\ p-1 \nmid 120 \\
+	\frac{1}{2} + \frac{1}{p}(2^{-1}(-1) \mod p) &\text{otherwise}\end{cases}$
+	
+\end{proof}
 	\begin{example}
 			ให้ $p \ge 3$ เป็นจำนวนเฉพาะ จงหาฟังก์ชัน $f: \ZZ \rightarrow \ZZ$ ทั้งหมดซึ่ง สำหรับเเต่ละ $m,n \in \ZZ$\\ $1.$ ถ้า $m \equiv n \pmod p$ เเล้ว $f(m) = f(n)$ 
 			\: $2. f(mn) = f(m)f(n)$ 
 	\end{example}
+\begin{proof}
+%	จาก Wilson's theorem จะได้ $1\cdot2\cdot\dots\cdot(p-1) \equiv -1 \pmod p$ จะได้ \\ $f(1)f(2)\cdot f(p-1) = f(-1) = f(p-1) $
+\end{proof}
 	\begin{example}
 		จงหาจำนวนเฉพาะ $p$ ทั้งหมด ที่ทำให้ ${100 \choose p} + 7$ หารด้วย $p$ ลงตัว
 	\end{example} 
+
 	\begin{example}
 		จงหาจำนวนเต็มบวก $N$ ทั้งหมดที่มีตัวประกอบเฉพาะอย่างน้อยสองจำนวนเเละ $N$\\ มีค่าเท่ากับผลบวกของกำลังสองของตัวหารบวกที่มีค่าน้อยที่สุด $4$ จำนวนเเรก
 	\end{example}
@@ -64,7 +144,7 @@
 		กำหนดให้ $x_1,x_2,\dots,x_k$ เป็นจำนวนเต็มซึ่ง $x_1+x_2+\dots+x_k = 1492$ จงเเสดงว่า \[ x_1^7+x_2^7+\dots+x_k^7 \neq 1998 \]
 	\end{example}
 	\begin{example}
-			กำหนดให้ $p_1<p_2<\dots<p_{31}$ เป็นจำนวนเฉพาะ ถ้า $30$ หาร  $p_1^4+p_2^4+\dots+p_{31}^4$ ลงตัว \\ จงเเสดงว่ามี $k$ ซึ่ง $p_k,p_{k+1},p_{k+2}$ เป็นจำนวนเฉพาะที่เรียงติดกัน 
+			กำหนดให้ $p_1<p_2<\dots<p_{31}$ เป็นจำนวนเฉพาะ ถ้า $30$ หาร  $p_1^4+p_2^4+\dots+p_{31}^4$ ลงตัว \\ จงเเสดงว่ามี $k$ ซึ่ง $p_k,p_{k+1},p_{k+2}$ เป็นจำนวนเฉพาะที่เรียงติดกัน
 	\end{example}
 	\begin{example}
 		ให้หาคู่อันดับของจำนวนเต็มบวก $(m,n)$ ทั้งหมดซึ่งทำให้ \[  [\phi(m)]^2-19[\phi(m)] = [\phi(n)]^2-91 \]
@@ -91,6 +171,27 @@
 		สำหรับจำนวนเต็มบวก $n$ กำหนดให้ $S(n)$ เเทนผลรวมของเลขโดดใน $n$ จงหาจำนวนเฉพาะ $p$ \\ทั้งหมดซึ่ง $S(p^{p+2})=S((p+2)^p)$
 	\end{example}
 \section{Combinatorics}
-
-\section{Algebra}
+\begin{example}
+	ให้ $a_1 \le a_2 \le \dots \le a_n = m$ เป็นจำนวนเต็มบวก ให้ $b_k$ เป็นจำนวนจอง $a_i$ ซึ่ง $a_i \ge k $ จงเเสดงว่า \[ a_1+a_2+\dots a_n = b_1+b_2+\dots +b_m \]
+\end{example}
+\begin{example}
+	กำหนดให้ $A =\{ 2010,2011,2012,\dots ,2553 \} $ ให้หาจำนวนสมาชิกใน $A$ ที่หารด้วย \\ จำนวนเฉพาะน้อยกว่า $10$ ลงตัว 
+\end{example}
+\begin{example}
+	กระทรวงศึกษาธิการจัดกิจกรรมโดยสุ่มเลือกนักเรียน ชั้น ม.1 จำนวน $2010$ คนจาก $5$ ภูมิภาคทั่ว\\ ประเทศ เพื่อให้นักเรียนคู่ใด ๆ เลือกถกปัญหาร่วมกันจำนวน $1$ หัวข้อ จากปัญหา $3$ หัวข้อคือ\\ ปัญหาด้านการเมือง ปัญหาด้านเศรษฐกิจ เเละปัญหาด้านสังคม ให้เเสดงว่าจะมีนักเรียน $3$ คนซึ่งเกิด\\เดือนเดียวกัน เป็นเพศเดียวกัน มาจากภูมิภาคเดียวกัน เเละนักเรียนทุก ๆ คู่ใน $3$ คนนี้เลือกถกปัญหา \\ ร่วมกันในหัวข้อเดียวกันหมด
+\end{example}
+	\begin{example}
+		ให้ $(V,E)$ เป็นกราฟจงเเสดงว่า \[
+			\sum_{v\in V} \deg(v)^2 = \sum_{xy \in E}(\deg(x)+\deg(y))
+		\]
+	\end{example}
+	\begin{example}
+		ในบางบริษัท ลูกจ้างเเต่ละคนจะทำงานเเค่ $10$ วันต่อเดือนเท่านั้น นอกจากนี้ ทุกๆ ลูกจ้าง $3$ คน จะมีวันที่ทำงสนร่วมกัน $1$ วันเท่านั้น จงเเสดงว่าบริษัทมีลูกจ้างอย่างมาก $19$ คนเท่านั้น (สมมติให้ $1$ เดือนมี $30$ วัน)
+	\end{example}
+	\begin{example}
+		กำหนดให้ $n$ จุดต่างกันบนระนาบหนึ่ง จงเเสดงว่ามีน้อยกว่า $2n^{3/2}$ คู่อันดับซึ่งห่างกัน $1$ หน่วย
+	\end{example}
+	\begin{example}
+		ในโรงละครสัตว์มีตัวตลก $n$ คนโดยเเต่งตัวเเละทาสีตัวเองโดยใช้สีต่างกัน $12$ สีต่างกัน \\ ตัวตลกเเต่ละคนต้องการอย่างน้อย $5$ สี วันหนึ่ง หวหน้าละครสัตว์ออกคำสั่งให้ไม่มีตัวตลก $2$ คนใดๆ มีสีชุดเดียวกัน เเละไม่มี สีใดๆที่มีตัวตลกใช้อย่างน้อย $20$ คน จงหาจำนวนตัวตลกที่มากที่สุด\\ที่ทำให้คำสั่งของหัวหน้าละครสัตว์เป็นไปได้
+	\end{example}
 \end{document}
